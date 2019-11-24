@@ -27,4 +27,11 @@ public class HelloWorldController
         logger.info("Receive request from {}", name);
         return helloService.hello(name);
     }
+
+    @RequestMapping("/exception")
+    public String exception() throws Exception
+    {
+        logger.info("Receive exception request");
+        throw new Exception("For test exception");
+    }
 }
